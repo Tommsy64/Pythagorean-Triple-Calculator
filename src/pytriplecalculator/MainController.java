@@ -1,15 +1,11 @@
 package pytriplecalculator;
 
-import java.awt.Desktop;
-import java.net.MalformedURLException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.net.URL;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 
 public class MainController {
 
@@ -91,25 +87,8 @@ public class MainController {
 
 	@FXML
 	protected void openChessClient(ActionEvent event) {
-		try {
-			openWebpage(new URL("http://tommsy64.github.io/Chess-Client/")
-					.toURI());
-		} catch (URISyntaxException e) {
-			e.printStackTrace();
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		}
-	}
-
-	private void openWebpage(URI uri) {
-		Desktop desktop = Desktop.isDesktopSupported() ? Desktop.getDesktop()
-				: null;
-		if (desktop != null && desktop.isSupported(Desktop.Action.BROWSE)) {
-			try {
-				desktop.browse(uri);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
+		final WebView browser = new WebView();
+		final WebEngine webEngine = browser.getEngine();
+		webEngine.load("http://tommsy64.github.io/Chess-Client/");
 	}
 }
