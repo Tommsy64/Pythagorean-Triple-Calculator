@@ -5,9 +5,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<GridPane hgap="3.0" prefHeight="230.0" prefWidth="450.0"
-	styleClass="root" vgap="3.0" xmlns="http://javafx.com/javafx/8"
-	xmlns:fx="http://javafx.com/fxml/1" fx:controller="pytriplecalculator.MainController">
+<GridPane prefHeight="230.0" prefWidth="450.0" styleClass="root"
+	xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="pytriplecalculator.MainController">
 	<columnConstraints>
 		<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"
 			prefWidth="100.0" />
@@ -16,15 +16,67 @@
 	</columnConstraints>
 	<rowConstraints>
 		<RowConstraints minHeight="10.0" prefHeight="30.0"
+			vgrow="SOMETIMES" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
+		<RowConstraints minHeight="10.0" prefHeight="30.0"
 			vgrow="SOMETIMES" />
 		<RowConstraints maxHeight="102.0" minHeight="10.0"
 			prefHeight="85.0" vgrow="SOMETIMES" />
 		<RowConstraints maxHeight="61.0" minHeight="10.0"
 			prefHeight="37.0" vgrow="SOMETIMES" />
+		<RowConstraints maxHeight="61.0" minHeight="10.0"
+			prefHeight="37.0" vgrow="SOMETIMES" xmlns="http://javafx.com/javafx/8"
+			xmlns:fx="http://javafx.com/fxml/1" />
 	</rowConstraints>
 	<children>
-		<TextArea fx:id="input" prefHeight="200.0" prefWidth="200.0"
-			text="" GridPane.columnSpan="2" GridPane.rowSpan="2" />
+		<TextArea fx:id="output" editable="false" prefHeight="200.0"
+			prefWidth="200.0" text="" GridPane.columnSpan="2"
+			GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.rowSpan="2"
+			GridPane.valignment="TOP" />
+		<HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0"
+			GridPane.halignment="CENTER" GridPane.rowIndex="3"
+			GridPane.valignment="CENTER">
+			<children>
+				<Label text="Number 1">
+				</Label>
+				<TextField fx:id="number1TextField" prefHeight="26.0"
+					prefWidth="140.0" />
+			</children>
+			<padding>
+				<Insets top="5.0" />
+			</padding>
+		</HBox>
+		<HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0"
+			GridPane.columnIndex="1" GridPane.rowIndex="3"
+			xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+			<children>
+				<Label text="Number 2">
+				</Label>
+				<TextField fx:id="number2TextField" prefHeight="26.0"
+					prefWidth="140.0" />
+			</children>
+			<padding>
+				<Insets top="5.0" />
+			</padding>
+		</HBox>
+		<ToolBar prefWidth="200.0" GridPane.columnSpan="2147483647"
+			GridPane.halignment="CENTER" GridPane.valignment="BOTTOM"
+			GridPane.vgrow="NEVER" xmlns:fx="http://javafx.com/fxml">
+			<items>
+				<Button fx:id="createButton" mnemonicParsing="false"
+					onMouseClicked="#createTriple" text="Create" GridPane.halignment="CENTER"
+					GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+				<Button fx:id="generateButton" mnemonicParsing="false"
+					onMouseClicked="#generateTriple" text="Generate"
+					GridPane.columnIndex="1" GridPane.halignment="CENTER"
+					GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+			</items>
+		</ToolBar>
+		<Label text="Created by Tommsy64. Layout by Aledde" wrapText="true"
+			GridPane.rowIndex="4" />
+		<Hyperlink fx:id="chessClientLink" alignment="CENTER"
+			text="www.ChessClient.zapto.org" underline="true" wrapText="true"
+			GridPane.columnIndex="1" GridPane.halignment="RIGHT"
+			GridPane.rowIndex="4" />
 	</children>
 	<padding>
 		<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
