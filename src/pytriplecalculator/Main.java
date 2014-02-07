@@ -31,7 +31,7 @@ public class Main extends Application {
 		Scene scene = SceneBuilder.create().root(root).build();
 		scene.getStylesheets().add(STYLESHEET_FILE);
 		primaryStage.setScene(scene);
-		primaryStage.setTitle("Pythagorean Triplets Calculator");
+		primaryStage.setTitle("Pythagorean Triplet Calculator");
 		// primaryStage.getIcons().add(ICON);
 		primaryStage.show();
 	}
